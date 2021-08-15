@@ -1,0 +1,257 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="justify-content-center flex-nowrap" style="width: 750px; margin: auto;">
+    <p>Note: This is a example with sketch notes, to illustrate how 3d models 
+      and potential immersive technologies might be used in an introduction to philosophy class</p>
+    </p>
+    
+    <h1>Stuff and Space</h1>
+
+    <h2>A Question for Thales</h2>
+
+    <p>
+      Thales wanted to find a single cause or explanation for the universe. 
+      In pursuit of such an explanation he proposed that the entire universe 
+      is fundamentally made up of one element: water
+    </p>
+
+    <p>
+      But if everything is water, how is Thales to account for our "lived experience" of variety and difference. Maybe everything is water. But why doesn't it all look like water?
+    </p>
+    <p>
+      If you think about it, this is still a question today that needs explaining. 
+    </p>
+    <p>
+      I can point to an ice cube and you can tell me it is water. 
+      But then I can point to a glass of water and you will tell me it is also water. 
+      Again, I can point to a cloud in the sky and again you will tell me it is also water. 
+  </p>
+  <p>
+    How can three different things, with such diverse properties, appearances, and behaviors really be the "same" thing?
+  </p>
+  <h2>Anaximenes on Condensation and Rarefaction</h2>
+  <p>
+    Anaximenes took this question seriously. 
+  </p>
+  <p>
+    If we're going to be able to explain the world in terms of a single cause (where this cause is some singular "stuff"), then the burden is on us to explain how this stuff can appear so "qualitatively different".
+  </p>
+  <p>
+    In the scene, there are three qualitatively different objects (perhaps one is "hard" and one is "somewhat firm" and the third is "very soft"). Let us imagine that each is composed of water (imagined as cubes). Since each object is made of water (cubes), and in this case the same amount of cubes, what is left to explain our different experience of these three objects?
+</p>
+
+    <div style="width: 750px; height: 500px;  padding: 10px 0">
+      <babylon model="./scene1.babylon" extends="default">
+        <!-- Ground that receives shadows -->
+    <!-- <ground receive-shadows="true"></ground> -->
+    <!-- Default skybox -->
+    <skybox></skybox>
+      <!-- enable antialiasing -->
+        <engine antialiasing="true"></engine>
+        <camera>
+          <!-- add camera behaviors -->
+          <behaviors>
+              <!-- enable default auto-rotate behavior -->
+              <auto-rotate type="0"></auto-rotate>
+              <!-- enable and configure the framing behavior -->
+              <framing type="1" zoom-on-bounding-info="true" zoom-stops-animation="true"></framing>
+              <!-- enable default bouncing behavior -->
+              <bouncing type="1"></bouncing>
+          </behaviors>
+      </camera>
+      
+      </babylon>
+      
+    </div>
+<p>
+    As you can see here, for Anaximenes, it wasn't the water (actually, he chose to focus on "air" rather than water as the fundamental stuff) itself that differentiated the objects, but the amount of space between the stuff. In other words, it is the density (or conversely) the rarity of the fundamental stuff that explains the qualitative differences in the things we experience. 
+  </p>
+  
+    <h2>Parmenides</h2>
+  
+  <p>
+    After Anaximenes, a man named Parmenides came a long asked some troubling questions.
+  </p>
+  <p>
+    What is the "stuff" between the water?
+  </p>
+  <p>
+    If it is nothing, then there really is  "NOTHING" between the cubes, right? And then, since each object has the same amount of cubes and "nothing" between them, they should all be qualitatively the same.
+  </p>
+  <p>
+    But if it is not "nothing" in this sense of absolute "NOTHING", then what is it? 
+  </p>
+  <p>
+    In this example, explore the "sphere" below. Try especially to go "inside" the sphere? What do you see there? Then consider: what is the sphere? And could the stuffstuff between the water (cubes) be?
+  </p>
+    <div style="width: 750px; height: 500px; padding: 10px 0">
+      <babylon model="./scene2.babylon"  extends="default">
+        <!-- Ground that receives shadows -->
+    <!-- <ground receive-shadows="true"></ground> -->
+    <!-- Default skybox -->
+    <skybox></skybox>
+      <!-- enable antialiasing -->
+      <engine antialiasing="true"></engine>
+      <camera>
+        <!-- add camera behaviors -->
+        <behaviors>
+            <!-- enable default auto-rotate behavior -->
+            <auto-rotate type="0"></auto-rotate>
+            <!-- enable and configure the framing behavior -->
+            <framing type="2" zoom-on-bounding-info="false" zoom-stops-animation="true"></framing>
+            <!-- enable default bouncing behavior -->
+            <bouncing type="1"></bouncing>
+        </behaviors>
+    </camera>
+    <vr object-scale-factor="2">
+    </vr>
+      </babylon>
+    </div>
+    <p>
+      Parmenides said that if the "stuff" between the "cubes" cannot be "NOTHING", then it must be something. But if everything that "is" is fundamentally water, then all of these cubes of water are just "swimming" in a larger sphere of more water.
+    </p>
+    <p>
+      From this, parmenides drew some troubling conclusions. This means there really can be no difference between different kinds of things. There can only be one fixed solid thing. Likewise, there can be no movement, and there can be no change.
+    </p>
+    <p>
+      Obviously he recognizes that we think we "see" difference and we think we "see" change. But he responds, given the "logical impossibility of change", this must be an illusion. It can't be how the world really is.
+    </p>
+    <h2>The Atomists</h2>
+    <p>
+      People were naturally perplexed by Parmenides' arguments. And they wanted to find a way to show that movement and change were real.  
+    </p>
+    <p> 
+      One such group was the Atomists, who rejected the assumption that there was only one kind of "fundamental thing". Instead they said that there were two kinds of fundamental things. 
+    </p>
+    <p>
+      Enter the scene again, and inspect the center object. What has been added here? What might the small sphere's represent. How might these help us explain movement and difference and likewise avoid Parmenides' paradox? But in order to allow the "cubes" to move, why do these spheres have to be a completely different kind of thing?
+    </p>
+    <div style="width: 750px; height: 500px; padding: 10px 0">
+      <babylon model="./scene3.babylon"  extends="default">
+        <!-- Ground that receives shadows -->
+    <!-- <ground receive-shadows="true"></ground> -->
+    <!-- Default skybox -->
+    <skybox></skybox>
+      <!-- enable antialiasing -->
+      <engine antialiasing="true"></engine>
+      <camera>
+        <!-- add camera behaviors -->
+        <behaviors>
+            <!-- enable default auto-rotate behavior -->
+            <auto-rotate type="0"></auto-rotate>
+            <!-- enable and configure the framing behavior -->
+            <framing type="2" zoom-on-bounding-info="false" zoom-stops-animation="true"></framing>
+            <!-- enable default bouncing behavior -->
+            <bouncing type="1"></bouncing>
+        </behaviors>
+    </camera>
+    <vr object-scale-factor="2">
+    </vr>
+      </babylon>
+    </div>
+
+    <p>
+      The Atomists created the idea of a second type of thing, which is nevertheless a very strange thing. To the fundamental stuff (which they called "atoms"), they added the "void" which is an emptiness into which atoms can move. While empty space, the "voids" are also not nothing. Rather that a real "something", a real and positive "vacuum".
+    </p>
+
+    <h2>Aristotle against the vacuum</h2>
+
+    <p>The Void or Vacuum proved to be as ingenious and it was perplexing. It raised a host of new questions. How could there be something that is the absence of anything. If the "void" is where nothing is, then must not the void be infinitely everywhere, that is, everywhere the finite atoms are not.</p>
+
+    <p>Does this mean the universe is infinite, going on forever and ever?</p>
+
+    <p>
+      Even though the Atomists invented the concept of the "void" to explain movement, Aristotle thought that the concept of a "Vacuum" raised serious conundrums for the possibility of movement.
+    </p>
+
+    <p>
+      Concern one:
+      To consider one of his concerns, let's return to our three objects, composed of atoms and surrounded and permeated by "voids". In the illustration, imagine that the entire space is filled with voids, represented by the spheres. Everywhere you do not see a cube, imagine there to be a "void".
+    </p>
+
+    <p>
+      Let's re-enter the space? What do you notice about the position of our three objects? 
+      In this vast expanse of "void", what about their position begs for explanation?
+    </p>
+
+    <div style="width: 750px; height: 500px; padding: 10px 0">
+      <babylon model="./scene3.babylon"  extends="default">
+        <!-- Ground that receives shadows -->
+    <!-- <ground receive-shadows="true"></ground> -->
+    <!-- Default skybox -->
+    <skybox></skybox>
+      <!-- enable antialiasing -->
+      <engine antialiasing="true"></engine>
+      <camera>
+        <!-- add camera behaviors -->
+        <behaviors>
+            <!-- enable default auto-rotate behavior -->
+            <auto-rotate type="0"></auto-rotate>
+            <!-- enable and configure the framing behavior -->
+            <framing type="2" zoom-on-bounding-info="false" zoom-stops-animation="true"></framing>
+            <!-- enable default bouncing behavior -->
+            <bouncing type="1"></bouncing>
+        </behaviors>
+    </camera>
+    <vr object-scale-factor="2">
+    </vr>
+      </babylon>
+    </div>
+
+    <p>
+      In this scenario we might notice that our three objects are fixed or suspended in a particular  position. But why at this point? If the universe is filled with vacuous space, nothing distinguishes any point in this vacuum from any other point. So what explains why these object are where they are? If so, well they are positioned at point 0. Aristotle, might answer, what distinguishes point 0 from any other point. In an infinite vacuum, isn't each point as much point 0 as any other point? Further if these objects were to move, what would be the reason, since every space is identical to every other space.
+    </p>
+
+    <p>Concern two: In the following simulation, what could explain why the red block moves slower in the top row than in the bottom row? 
+    </p>
+    <p>
+      If we imagine the "spheres" again to represent the "void", what further puzzle arises about the movement of the red cube? In light of your answer to the previous question, how long should it take for the red cube to move through the 10 spherical "voids"?
+    </p>
+
+
+      <div style="width: 750px; height: 500px; padding: 10px 0">
+        <babylon model="./scene4Animation.glb"  extends="default">
+          <!-- Ground that receives shadows -->
+      <!-- <ground receive-shadows="true"></ground> -->
+      <!-- Default skybox -->
+      <skybox></skybox>
+        <!-- enable antialiasing -->
+        <engine antialiasing="true"></engine>
+        <camera>
+          <!-- add camera behaviors -->
+          <behaviors>
+              <!-- enable default auto-rotate behavior -->
+              <auto-rotate type="0"></auto-rotate>
+              <!-- enable and configure the framing behavior -->
+              <framing type="2" zoom-on-bounding-info="false" zoom-stops-animation="true"></framing>
+              <!-- enable default bouncing behavior -->
+              <bouncing type="1"></bouncing>
+          </behaviors>
+      </camera>
+      <vr object-scale-factor="2">
+      </vr>
+        </babylon>
+      </div>
+
+      <p>
+        Aristotle explains velocity in terms of a things magnitude (or "gravitas") divided by its resistance. As the red square (water) moves against other squares (more water) it meets with resistance and this slows its progress.
+      </p>
+
+      <p>
+        But if the sphere represents the "Void" we can understand why the red square moves faster. There is less "resistance". 
+
+        But this creates a new puzzle. Since the sphere's represent the "void", shouldn't there be 0 resistance? And shouldn't this make speed infinite or instantaneous? For Aristotle, the a vacuum implies instantaneous travel through space. But since we know things don't travel instantaneously, he rejected the possibility of a vacuum.
+      </p>
+    
+
+
+
+  </div>
+
+  </body>
+</html>

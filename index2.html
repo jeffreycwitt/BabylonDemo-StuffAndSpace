@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Babylon Template</title>
+
+        <style>
+            html, body {
+                overflow: scroll;
+                /* width: 100%;
+                height: 100%; */
+                margin: 0;
+                padding: 0;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+
+        <script src="https://cdn.babylonjs.com/babylon.js"></script>
+        <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+        <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    </head>
+
+   <body>
+    <h1>Stuff and Space</h1>
+
+    <h2>A question for Thales</h2>
+
+    If everything is water, how is Thales to account for our "lived experience" of variety and difference. Maybe everything is water. But why doesn't it look like water?
+
+    If you think about this is still a question today that needs explaining. 
+    
+    I point to an ice cube and you tell me it is water. 
+    Then I point to a glass of water and you tell me it is also water. 
+    Then I point to a cloud in the sky and again you tell me it is also water. 
+
+    How can three different things, with such diverse properties, appearances, and behaviors really be the "same" thing.
+
+    Question: how do we explain this today? 
+
+    <h2>Anaximenes on Condensation and Rarefaction</h2>
+
+    Anaximenes took this question seriously. 
+
+    If we're going to be able to explain the world in terms of a single cause (in this cause some single stuff), then the burden is on us to explain how this single stuff can appear so "qualitatively different"
+
+    In the scene there are two qualitatively different objects (perhaps one is "hard" and one is "soft"). Let us imagine that each is composed of water (imagined as cubes). Since each object is made of water (cubes) and in this case the same amount of cubes? What is left to explain our different experience of these two objects?
+
+  
+    <div>
+      <canvas style="display: block; width:50%" id="renderCanvas1" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+      </div>
+    As you can see here, for Anaximenes it wasn't the water (or "air") itself that differentiated the objects, but the amount of space between the stuff. In other words, the density (or conversely) the rarity of the fundamental stuff that explains the qualitative differences in the things we experience. 
+
+    <h2>Parmenides</h2>
+
+    After Anaximenes, a man named Parmenides came a long asked some troubling questions.
+
+    What is the "stuff" between the water.
+
+    If it is nothing, then there is "nothing" between the cubes, right? And then there is no difference, since each object has the same amount of cubes.
+
+    But if it is not "nothing", then what is it? 
+
+    In this example, explore the "sphere" below. Try especially to go "inside" the sphere? What do you see there? Then consider, what is the sphere? And what is the stuff between the water?
+  <div>
+    <canvas id="renderCanvas2" style="display: block; width: 50%" touch-action="none"></canvas> <!-- touch-action="none" for best results from PEP -->
+    </div>
+    </div>
+    
+    <script>
+        const canvas1 = document.getElementById("renderCanvas1"); // Get the canvas element
+        const canvas2 = document.getElementById("renderCanvas2"); // Get the canvas element
+        const engine1 = new BABYLON.Engine(canvas1, true); // Generate the BABYLON 3D engine
+        const engine2 = new BABYLON.Engine(canvas2, true); // Generate the BABYLON 3D engine
+
+        // Add your code here matching the playground format
+        const createScene1 = function () {
+    
+          const scene1 = new BABYLON.Scene(engine1);
+
+const camera1 = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2.5, Math.PI / 2.5, 150, new BABYLON.Vector3(0, 0, 5));
+camera1.attachControl(canvas1, false);
+
+
+const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
+
+const boxes = []
+for (let i = 0; i < 10; i++) {
+boxes.push(BABYLON.MeshBuilder.CreateBox("box" + i, {size: .5, width: .5, height: .5}));
+boxes[i].position.y = (2 + i) - 7
+
+}
+
+const boxes2 = []
+for (let i = 0; i < 10; i++) {
+boxes2.push(BABYLON.MeshBuilder.CreateBox("box2" + i, {size: .5, width: .5, height: .5}));
+boxes2[i].position.y = (2 + i) - 7
+boxes2[i].position.x = - 1
+
+}
+
+const boxes3 = []
+for (let i = 0; i < 10; i++) {
+boxes3.push(BABYLON.MeshBuilder.CreateBox("box3" + i, {size: .5, width: .5, height: .5}));
+boxes3[i].position.y = (2 + i) - 7
+boxes3[i].position.x = 1
+
+}
+
+const boxes4 = []
+for (let i = 0; i < 10; i++) {
+boxes4.push(BABYLON.MeshBuilder.CreateBox("box4" + i, {size: .5, width: .5, height: .5}));
+boxes4[i].position.y = (2 + 3*(i)) - 15
+boxes4[i].position.x = 5
+
+}
+
+const boxes5 = []
+for (let i = 0; i < 10; i++) {
+boxes5.push(BABYLON.MeshBuilder.CreateBox("box5" + i, {size: .5, width: .5, height: .5}));
+boxes5[i].position.y = (3 + 3*(i)) - 15
+boxes5[i].position.x = 6
+boxes5[i].position.z = 1
+
+}
+
+const boxes6 = []
+for (let i = 0; i < 10; i++) {
+boxes6.push(BABYLON.MeshBuilder.CreateBox("box6" + i, {size: .5, width: .5, height: .5}));
+boxes6[i].position.y = (4 + 3*(i)) - 15
+boxes6[i].position.x = 7
+boxes6[i].position.z = -1
+
+}
+
+const boxes7 = []
+for (let i = 0; i < 10; i++) {
+boxes7.push(BABYLON.MeshBuilder.CreateBox("box4" + i, {size: .5, width: .5, height: .5}));
+boxes7[i].position.y = (2 + 0.7*(i)) - 4
+boxes7[i].position.x = -6
+boxes7[i].position.z = 1
+}
+
+const boxes8 = []
+for (let i = 0; i < 10; i++) {
+boxes8.push(BABYLON.MeshBuilder.CreateBox("box8" + i, {size: .5, width: .5, height: .5}));
+boxes8[i].position.y = (3 + 0.7*(i)) - 4
+boxes8[i].position.x = -7
+boxes8[i].position.z = 1
+
+}
+
+const boxes9 = []
+for (let i = 0; i < 10; i++) {
+boxes9.push(BABYLON.MeshBuilder.CreateBox("box9" + i, {size: .5, width: .5, height: .5}));
+boxes9[i].position.y = (4 + 0.7*(i)) - 4
+boxes9[i].position.x = -8
+boxes9[i].position.z = -1
+
+}
+return scene1;
+        };
+
+const createScene2 = function () {
+    
+    const scene2 = new BABYLON.Scene(engine2);
+
+    const camera2 = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2.5, Math.PI / 2.5, 200, new BABYLON.Vector3(0, 0, 5));
+camera2.attachControl(canvas2, false);
+
+
+
+const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0));
+
+const boxes = []
+for (let i = 0; i < 10; i++) {
+boxes.push(BABYLON.MeshBuilder.CreateBox("box" + i, {size: .5, width: .5, height: .5}));
+boxes[i].position.y = (2 + i) - 7
+
+}
+
+const boxes2 = []
+for (let i = 0; i < 10; i++) {
+boxes2.push(BABYLON.MeshBuilder.CreateBox("box2" + i, {size: .5, width: .5, height: .5}));
+boxes2[i].position.y = (2 + i) - 7
+boxes2[i].position.x = - 1
+
+}
+
+const boxes3 = []
+for (let i = 0; i < 10; i++) {
+boxes3.push(BABYLON.MeshBuilder.CreateBox("box3" + i, {size: .5, width: .5, height: .5}));
+boxes3[i].position.y = (2 + i) - 7
+boxes3[i].position.x = 1
+
+}
+
+const boxes4 = []
+for (let i = 0; i < 10; i++) {
+boxes4.push(BABYLON.MeshBuilder.CreateBox("box4" + i, {size: .5, width: .5, height: .5}));
+boxes4[i].position.y = (2 + 3*(i)) - 15
+boxes4[i].position.x = 5
+
+}
+
+const boxes5 = []
+for (let i = 0; i < 10; i++) {
+boxes5.push(BABYLON.MeshBuilder.CreateBox("box5" + i, {size: .5, width: .5, height: .5}));
+boxes5[i].position.y = (3 + 3*(i)) - 15
+boxes5[i].position.x = 6
+boxes5[i].position.z = 1
+
+}
+
+const boxes6 = []
+for (let i = 0; i < 10; i++) {
+boxes6.push(BABYLON.MeshBuilder.CreateBox("box6" + i, {size: .5, width: .5, height: .5}));
+boxes6[i].position.y = (4 + 3*(i)) - 15
+boxes6[i].position.x = 7
+boxes6[i].position.z = -1
+
+}
+
+const boxes7 = []
+for (let i = 0; i < 10; i++) {
+boxes7.push(BABYLON.MeshBuilder.CreateBox("box4" + i, {size: .5, width: .5, height: .5}));
+boxes7[i].position.y = (2 + 0.7*(i)) - 4
+boxes7[i].position.x = -6
+boxes7[i].position.z = 1
+}
+
+const boxes8 = []
+for (let i = 0; i < 10; i++) {
+boxes8.push(BABYLON.MeshBuilder.CreateBox("box8" + i, {size: .5, width: .5, height: .5}));
+boxes8[i].position.y = (3 + 0.7*(i)) - 4
+boxes8[i].position.x = -7
+boxes8[i].position.z = 1
+
+}
+
+const boxes9 = []
+for (let i = 0; i < 10; i++) {
+boxes9.push(BABYLON.MeshBuilder.CreateBox("box9" + i, {size: .5, width: .5, height: .5}));
+boxes9[i].position.y = (4 + 0.7*(i)) - 4
+boxes9[i].position.x = -8
+boxes9[i].position.z = -1
+
+}
+
+var f = new BABYLON.Vector4(0.5,0, 1, 1); // front image = half the whole image along the width 
+var b = new BABYLON.Vector4(0,0, 0.5, 1); // back image = second half along the width
+
+const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 100, 
+sideOrientation: BABYLON.Mesh.DOUBLESIDE, frontUVs: f, backUVs: b});
+
+
+return scene2;
+};
+
+
+
+
+        const scene1 = createScene1(); //Call the createScene function
+        const scene2 = createScene2(); //Call the createScene function
+
+        // Register a render loop to repeatedly render the scene
+        engine1.runRenderLoop(function () {
+                scene1.render();
+                
+        });
+
+        engine2.runRenderLoop(function () {
+                scene2.render();
+                
+        });
+
+        // Watch for browser/canvas resize events
+        window.addEventListener("resize", function () {
+                engine1.resize();
+        });
+        // Watch for browser/canvas resize events
+        window.addEventListener("resize", function () {
+                engine2.resize();
+        });
+    </script>
+
+   </body>
+
+</html>
